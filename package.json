@@ -1,0 +1,81 @@
+{
+  "name": "Seer",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node -r babel-register ./node_modules/.bin/webpack-dev-server --port 3000 --hot --config webpack/dev.js",
+    "standalone": "NODE_ENV=staging npm start",
+    "lint": "eslint src api/index.js webpack templates",
+    "test": "rm -rf api/dist && NODE_ENV=test ava",
+    "cover": "nyc --reporter html --reporter text npm test",
+    "report": "nyc report --reporter text-lcov | coveralls",
+    "api": "(cd api && npm run build && npm run docs)",
+    "copy": "cp templates/{entry,manifest,128}.* dist && cp src/bridge/{background,content-script}.js dist && zip -r dist.zip dist",
+    "build": "rm -rf dist* && NODE_ENV=production webpack --progress --hide-modules --config webpack/build.babel.js && npm run copy"
+  },
+  "dependencies": {
+    "hint.css": "^2.5.0",
+    "lodash": "^4.17.4",
+    "object-path-immutable": "^0.5.1",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-icons": "^2.2.5",
+    "react-json-tree-zavatta": "^0.1.2",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.1",
+    "redux-actions": "^2.0.3",
+    "serialize-javascript": "^1.3.0"
+  },
+  "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
+    "ava": "^0.20.0",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-istanbul": "^4.1.4",
+    "babel-plugin-module-resolver": "^2.7.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "coveralls": "^2.13.1",
+    "css-loader": "^0.28.4",
+    "deck.gl": "^4.1.0-alpha.7",
+    "enzyme": "^2.9.1",
+    "eslint": "^4.1.1",
+    "eslint-config-zavatta": "^6.0.0",
+    "eslint-config-zavatta-react": "^2.2.1",
+    "eslint-plugin-react": "^7.1.0",
+    "extract-text-webpack-plugin": "^2.1.2",
+    "html-webpack-plugin": "^2.29.0",
+    "jsdom": "^11.0.0",
+    "jsdom-global": "^3.0.2",
+    "luma.gl": "^4.0.0-alpha.5",
+    "node-sass": "^4.5.3",
+    "nyc": "^11.0.3",
+    "react-addons-test-utils": "^15.6.0",
+    "react-map-gl": "beta",
+    "sass-loader": "^6.0.6",
+    "sinon": "^2.3.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0",
+    "webpack-stats-plugin": "^0.1.5"
+  },
+  "ava": {
+    "require": [
+      "babel-register",
+      "jsdom-global/register"
+    ],
+    "babel": "inherit"
+  },
+  "nyc": {
+    "sourceMap": false,
+    "instrument": false
+  },
+  "author": "Balthazar Gronon <bgronon@gmail.com>",
+  "license": "MIT",
+  "private": true
+}

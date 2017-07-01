@@ -1,0 +1,17 @@
+.p { padding: 1rem; }
+
+.f { display: flex; }
+.fg { flex-grow: 1; }
+.fjc { display: flex; justify-content: center; }
+.fac { display: flex; align-items: center; }
+.fcol { display: flex; flex-direction: column; }
+
+.z {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pointer {
+  cursor: pointer;
+}

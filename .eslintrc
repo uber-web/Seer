@@ -1,0 +1,10 @@
+{
+  extends: ['zavatta', 'zavatta-react'],
+  globals: {
+    chrome: false,
+    Set: false,
+  },
+  rules: {
+    'react/no-array-index-key': 0
+  }
+}
