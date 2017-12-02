@@ -26,33 +26,37 @@ const initialState = {
   selectedItem: [],
 }
 
-const selectFirstTab = (state, key) => state.selectedTab ? state : ({
-  ...state,
-  selectedTab: key,
-})
+const selectFirstTab = (state, key) =>
+  state.selectedTab
+    ? state
+    : {
+        ...state,
+        selectedTab: key,
+      }
 
-export default handleActions({
+export default handleActions(
+  {
+    TOGGLE_ACTIVE: state => ({ ...state, active: !state.active }),
 
-  SWITCH_ACTIVE: (state, { payload: active }) => ({ ...state, active }),
+    LIST: (state, { payload: { key } }) => selectFirstTab(state, key),
+    LIST_ITEM: (state, { payload: { key } }) => selectFirstTab(state, key),
+    UPDATE_ITEM: (state, { payload: { key } }) => selectFirstTab(state, key),
+    MULTI_UPDATE_ITEM: (state, { payload: { key } }) => selectFirstTab(state, key),
 
-  LIST: (state, { payload: { key } }) => selectFirstTab(state, key),
-  LIST_ITEM: (state, { payload: { key } }) => selectFirstTab(state, key),
-  UPDATE_ITEM: (state, { payload: { key } }) => selectFirstTab(state, key),
-  MULTI_UPDATE_ITEM: (state, { payload: { key } }) => selectFirstTab(state, key),
+    SELECT_TAB: (state, { payload: key }) => ({
+      ...state,
+      selectedTab: key,
+      selectedItem: [],
+    }),
 
-  SELECT_TAB: (state, { payload: key }) => ({
-    ...state,
-    selectedTab: key,
-    selectedItem: [],
-  }),
+    SELECT_ITEM: (state, { payload: selectedItem }) => ({
+      ...state,
+      selectedItem,
+    }),
 
-  SELECT_ITEM: (state, { payload: selectedItem }) => ({
-    ...state,
-    selectedItem,
-  }),
+    GOTO: (state, { payload }) => ({ ...state, ...payload }),
 
-  GOTO: (state, { payload }) => ({ ...state, ...payload }),
-
-  RESET: () => initialState,
-
-}, initialState)
+    RESET: () => initialState,
+  },
+  initialState
+)

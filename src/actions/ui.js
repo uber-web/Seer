@@ -23,4 +23,4 @@ import { createAction } from 'redux-actions'
 export const selectTab = createAction('SELECT_TAB')
 export const selectItem = createAction('SELECT_ITEM')
 export const goto = createAction('GOTO')
-export const switchActive = createAction('SWITCH_ACTIVE')
+export const toggleActive = createAction('TOGGLE_ACTIVE')

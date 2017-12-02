@@ -19,26 +19,38 @@
 // THE SOFTWARE.
 
 import React, { Component } from 'react'
+import styled, { ThemeProvider } from 'styled-components'
 
-import Tabs from 'components/Tabs'
 import Content from 'components/Content'
-import Switch from 'components/Switch'
+import Header from 'components/Header'
+
+import theme from 'theme'
+
+const Container = styled.div`
+  background-color: ${p => p.theme.base00};
+  color: white;
+  font-family: 'Helvetia Neue', sans-serif;
+  font-size: 14px;
+  user-select: none;
+
+  flex-grow: 1;
+
+  a {
+    color: ${p => p.theme.primary};
+  }
+`
 
 class App extends Component {
-
-  render () {
-
+  render() {
     return (
-      <div className='App fg fcol'>
-
-        <Switch />
-        <Tabs />
-        <Content />
-
-      </div>
+      <ThemeProvider theme={theme}>
+        <Container>
+          <Header />
+          <Content />
+        </Container>
+      </ThemeProvider>
     )
   }
-
 }
 
 export default App

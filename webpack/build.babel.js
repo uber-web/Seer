@@ -35,18 +35,13 @@ export default {
   },
 
   module: {
-    rules: [{
-      test: /\.js$/,
-      use: 'babel-loader',
-      exclude: /node_modules/,
-    }, {
-      test: /\.scss$/,
-      use: ExtractTextPlugin.extract({
-        fallback: 'style-loader',
-        use: ['css-loader', 'sass-loader', 'autoprefixer-loader'],
-      }),
-      exclude: /node_modules/,
-    }],
+    rules: [
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules/,
+      },
+    ],
   },
 
   plugins: [
@@ -74,12 +69,12 @@ export default {
     }),
 
     new StatsWriterPlugin({
-      transform: data => JSON.stringify({
-        main: data.assetsByChunkName.main[0],
-        styles: data.assetsByChunkName.main[1],
-      }),
+      transform: data =>
+        JSON.stringify({
+          main: data.assetsByChunkName.main[0],
+          styles: data.assetsByChunkName.main[1],
+        }),
     }),
-
   ],
 
   stats: {
@@ -93,5 +88,4 @@ export default {
     cached: false,
     cachedAssets: false,
   },
-
 }

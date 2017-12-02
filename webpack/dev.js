@@ -34,23 +34,24 @@ export default {
 
   resolve: {
     alias: {
-      'mapbox-gl/js/geo/transform': resolve(__dirname, '../node_modules/mapbox-gl/js/geo/transform'),
+      'mapbox-gl/js/geo/transform': resolve(
+        __dirname,
+        '../node_modules/mapbox-gl/js/geo/transform',
+      ),
       'mapbox-gl': resolve(__dirname, '../node_modules/mapbox-gl/dist/mapbox-gl.js'),
       react: resolve(__dirname, '../node_modules/react'),
     },
   },
 
   module: {
-    rules: [{
-      test: /\.js$/,
-      loader: 'babel-loader',
-      include: src,
-      query: { presets: ['react-hmre'] },
-    }, {
-      test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader', 'autoprefixer-loader'],
-      include: src,
-    }],
+    rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        include: src,
+        query: { presets: ['react-hmre'] },
+      },
+    ],
   },
 
   plugins: [
@@ -66,5 +67,4 @@ export default {
   node: {
     fs: 'empty',
   },
-
 }

@@ -26,14 +26,10 @@ import App from 'components/App'
 import createStore from 'store'
 import { sendMessage, onMessage } from 'bridge'
 
-import 'styles/main.scss'
-
 createStore(store => {
-
   sendMessage('init')
 
-  onMessage(({ type, payload }) =>
-    store.dispatch({ type, payload: JSON.parse(payload) }))
+  onMessage(({ type, payload }) => store.dispatch({ type, payload: JSON.parse(payload) }))
 
   const root = (
     <Provider store={store}>
@@ -44,5 +40,4 @@ createStore(store => {
   const rootNode = document.getElementById('root')
 
   render(root, rootNode)
-
 })

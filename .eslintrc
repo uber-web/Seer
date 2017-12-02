@@ -1,5 +1,5 @@
 {
-  extends: ['zavatta', 'zavatta-react'],
+  extends: ['zavatta', 'zavatta-react', 'prettier', 'prettier/react'],
   globals: {
     chrome: false,
     Set: false,

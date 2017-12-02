@@ -20,6 +20,7 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import styled from 'styled-components'
 
 import { selectTab } from 'actions/ui'
 
@@ -28,27 +29,48 @@ export const mapStateToProps = ({ main, ui: { selectedTab } }) => ({
   selectedTab,
 })
 
-@connect(mapStateToProps, { selectTab })
-class Tabs extends Component {
+const Container = styled.div`
+  display: flex;
+  height: 2.5rem;
+`
 
-  render () {
-    const { tabs, selectedTab, selectTab } = this.props
-    if (!tabs || !tabs.length) { return null }
+const Tab = styled.div`
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: ${p => p.theme.color[p.isActive ? 'active' : 'inactive']};
+  background-color: ${p => (p.isActive ? p.theme.base01 : p.theme.base00)};
+  border-right: 1px solid ${p => p.theme.border.light};
 
-    return (
-      <div className='Tabs f'>
-        {tabs.map(tab => (
-          <div
-            className={`Tab fac ${tab === selectedTab ? 'active' : ''}`}
-            onClick={() => selectTab(tab)}
-            key={tab}>
-            {tab}
-          </div>
-        ))}
-      </div>
-    )
+  &:after {
+    height: 100%;
+    content: '';
+    border-right: 1px solid ${p => p.theme.black};
   }
 
+  span {
+    padding: 0.5rem 1.5rem;
+  }
+`
+
+@connect(mapStateToProps, { selectTab })
+class Tabs extends Component {
+  render() {
+    const { tabs, selectedTab, selectTab } = this.props
+    if (!tabs || !tabs.length) {
+      return null
+    }
+
+    return (
+      <Container>
+        {tabs.map(tab => (
+          <Tab onClick={() => selectTab(tab)} isActive={tab === selectedTab} key={tab}>
+            <span>{tab}</span>
+          </Tab>
+        ))}
+      </Container>
+    )
+  }
 }
 
 export default Tabs

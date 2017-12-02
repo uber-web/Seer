@@ -26,21 +26,16 @@ import App from 'components/App'
 import Demo from 'dev/demo'
 import createStore from 'store'
 
-import 'styles/main.scss'
-
 if (process.env.NODE_ENV !== 'staging') {
   window.__SEER_INITIALIZED__ = true
 }
 
 createStore(store => {
-
   const root = (
     <Provider store={store}>
-      <div className='f'>
+      <div style={{ display: 'flex' }}>
         <Demo />
-        {process.env.NODE_ENV !== 'staging' && (
-          <App />
-        )}
+        {process.env.NODE_ENV !== 'staging' && <App />}
       </div>
     </Provider>
   )
@@ -48,5 +43,4 @@ createStore(store => {
   const rootNode = document.getElementById('root')
 
   render(root, rootNode)
-
 })
