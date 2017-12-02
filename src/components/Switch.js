@@ -78,9 +78,19 @@ const Toggle = styled.div`
   toggleActive,
 })
 class Switch extends Component {
+  componentDidMount() {
+    const { active } = this.props
+    sendMessage('switchCapture', { value: active })
+  }
+
+  componentWillUpdate(nextProps) {
+    if (nextProps.active !== this.props.active) {
+      sendMessage('switchCapture', { value: nextProps.active })
+    }
+  }
+
   switch = () => {
-    const { toggleActive, active } = this.props
-    sendMessage('switchCapture', { value: !active })
+    const { toggleActive } = this.props
     toggleActive()
   }
 

@@ -25,13 +25,14 @@ const switchCapture = value => {
   script.parentNode.removeChild(script)
 }
 
-switchCapture(true)
-
 /**
  * window -> background
  */
 window.addEventListener('message', event => {
-  if (event.source !== window || event.data.source !== 'seer-agent') { return }
+  if (event.source !== window || event.data.source !== 'seer-agent') {
+    return
+  }
+
   chrome.runtime.sendMessage(event.data)
 })
 
@@ -42,5 +43,6 @@ chrome.extension.onMessage.addListener(event => {
   if (event.type === 'switchCapture') {
     return switchCapture(event.payload.value)
   }
+
   window.postMessage(event, '*')
 })

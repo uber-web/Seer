@@ -25,8 +25,7 @@ import has from 'lodash/has'
 
 import reducer from 'reducers'
 
-const devTools =
-  process.env.__BROWSER__ && window.devToolsExtension ? window.devToolsExtension() : f => f
+const devTools = window.devToolsExtension ? window.devToolsExtension() : f => f
 
 const hasChromeStorage = has(window, 'chrome.storage.sync.get')
 
@@ -43,6 +42,7 @@ export default cb => {
 
   getStorage(initialState => {
     const store = createStore(reducer, initialState || {}, enhancers)
+
     if (module.hot) {
       module.hot.accept('./reducers', () => {
         const nextRootReducer = require('./reducers').default

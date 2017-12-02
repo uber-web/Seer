@@ -21,6 +21,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
+import get from 'lodash/get'
 
 import App from 'components/App'
 import createStore from 'store'
@@ -29,7 +30,14 @@ import { sendMessage, onMessage } from 'bridge'
 createStore(store => {
   sendMessage('init')
 
-  onMessage(({ type, payload }) => store.dispatch({ type, payload: JSON.parse(payload) }))
+  onMessage(({ type, payload }) => {
+    if (type === 'RESET') {
+      const active = get(store.getState(), 'ui.active')
+      sendMessage('switchCapture', { value: active })
+    }
+
+    store.dispatch({ type, payload: JSON.parse(payload) })
+  })
 
   const root = (
     <Provider store={store}>

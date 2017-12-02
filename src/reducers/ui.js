@@ -56,7 +56,7 @@ export default handleActions(
 
     GOTO: (state, { payload }) => ({ ...state, ...payload }),
 
-    RESET: () => initialState,
+    RESET: state => ({ ...initialState, active: state.active }),
   },
   initialState,
 )

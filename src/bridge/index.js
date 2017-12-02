@@ -24,10 +24,14 @@ const isExtension = has(window, 'chrome.runtime.id')
 
 const bridge = isExtension && chrome.runtime.connect({ name: 'seer' })
 
-export const sendMessage = (type, payload = {}) => isExtension
-  ? bridge.postMessage({ type, payload, source: 'seer-core', tabId: chrome.devtools.inspectedWindow.tabId })
-  : window.postMessage({ type, payload, source: 'seer-core' }, '*')
+export const sendMessage = (type, payload = {}) =>
+  isExtension
+    ? bridge.postMessage({
+        type,
+        payload,
+        source: 'seer-core',
+        tabId: chrome.devtools.inspectedWindow.tabId,
+      })
+    : window.postMessage({ type, payload, source: 'seer-core' }, '*')
 
-export const onMessage = cb => isExtension
-  ? bridge.onMessage.addListener(cb)
-  : null
+export const onMessage = cb => (isExtension ? bridge.onMessage.addListener(cb) : null)

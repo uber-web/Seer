@@ -31,7 +31,6 @@ export const mapStateToProps = ({ main, ui: { selectedTab } }) => ({
 
 const Container = styled.div`
   display: flex;
-  height: 2.5rem;
 `
 
 const Tab = styled.div`
