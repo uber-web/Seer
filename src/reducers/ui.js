@@ -58,5 +58,5 @@ export default handleActions(
 
     RESET: () => initialState,
   },
-  initialState
+  initialState,
 )

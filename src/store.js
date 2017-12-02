@@ -18,31 +18,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import { createStore, compose } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import serialize from 'serialize-javascript'
+import thunk from 'redux-thunk'
 import has from 'lodash/has'
 
 import reducer from 'reducers'
 
-const devTools = (process.env.__BROWSER__ && window.devToolsExtension)
-  ? window.devToolsExtension()
-  : f => f
+const devTools =
+  process.env.__BROWSER__ && window.devToolsExtension ? window.devToolsExtension() : f => f
 
 const hasChromeStorage = has(window, 'chrome.storage.sync.get')
 
-export const getStorage = cb => hasChromeStorage
-  ? chrome.storage.sync.get(cb)
-  : cb(JSON.parse(localStorage.getItem('state')))
+export const getStorage = cb =>
+  hasChromeStorage ? chrome.storage.sync.get(cb) : cb(JSON.parse(localStorage.getItem('state')))
 
-export const setStorage = (data, cb) => hasChromeStorage
-  ? chrome.storage.sync.set(data, cb)
-  : cb(localStorage.setItem('state', serialize(data)))
+export const setStorage = (data, cb = f => f) =>
+  hasChromeStorage
+    ? chrome.storage.sync.set(data, cb)
+    : cb(localStorage.setItem('state', serialize(data)))
 
 export default cb => {
-
-  const enhancers = compose(
-    devTools,
-  )
+  const enhancers = compose(applyMiddleware(thunk), devTools)
 
   getStorage(initialState => {
     const store = createStore(reducer, initialState || {}, enhancers)
@@ -55,5 +52,4 @@ export default cb => {
 
     cb(store)
   })
-
 }

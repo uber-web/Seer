@@ -20,7 +20,15 @@
 
 import { createAction } from 'redux-actions'
 
+import { setStorage } from 'store'
+
 export const selectTab = createAction('SELECT_TAB')
 export const selectItem = createAction('SELECT_ITEM')
 export const goto = createAction('GOTO')
-export const toggleActive = createAction('TOGGLE_ACTIVE')
+
+export const toggleActive = () => (dispatch, getState) => {
+  dispatch({ type: 'TOGGLE_ACTIVE' })
+
+  const { ui } = getState()
+  setStorage({ ui })
+}
