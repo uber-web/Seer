@@ -22,7 +22,7 @@
 
 <p align="center">A customizable devtool solution</p>
 
-<img src="https://cdn.pbrd.co/images/94k37GEY0.gif" />
+<img src="https://cdn.pbrd.co/images/GWt0Bpj.png" />
 
 ### Introduction
 
