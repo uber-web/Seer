@@ -1421,7 +1421,7 @@ buffer@^4.3.0:
 
 buffer@^5.0.3:
   version "5.0.8"
-  resolved "https://unpm.uberinternal.com/buffer/-/buffer-5.0.8.tgz#84daa52e7cf2fa8ce4195bc5cf0f7809e0930b24"
+  resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.0.8.tgz#84daa52e7cf2fa8ce4195bc5cf0f7809e0930b24"
   dependencies:
     base64-js "^1.0.2"
     ieee754 "^1.1.4"
@@ -1592,7 +1592,7 @@ circular-json@^0.3.1:
 
 classnames@^2.2.5:
   version "2.2.5"
-  resolved "https://unpm.uberinternal.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
 clean-css@4.1.x:
   version "4.1.5"
@@ -1925,7 +1925,7 @@ crypto-random-string@^1.0.0:
 
 css-color-keywords@^1.0.0:
   version "1.0.0"
-  resolved "https://unpm.uberinternal.com/css-color-keywords/-/css-color-keywords-1.0.0.tgz#fea2616dc676b2962686b3af8dbdbe180b244e05"
+  resolved "https://registry.yarnpkg.com/css-color-keywords/-/css-color-keywords-1.0.0.tgz#fea2616dc676b2962686b3af8dbdbe180b244e05"
 
 css-select@^1.1.0, css-select@~1.2.0:
   version "1.2.0"
@@ -1938,7 +1938,7 @@ css-select@^1.1.0, css-select@~1.2.0:
 
 css-to-react-native@^2.0.3:
   version "2.0.4"
-  resolved "https://unpm.uberinternal.com/css-to-react-native/-/css-to-react-native-2.0.4.tgz#cf4cc407558b3474d4ba8be1a2cd3b6ce713101b"
+  resolved "https://registry.yarnpkg.com/css-to-react-native/-/css-to-react-native-2.0.4.tgz#cf4cc407558b3474d4ba8be1a2cd3b6ce713101b"
   dependencies:
     css-color-keywords "^1.0.0"
     fbjs "^0.8.5"
@@ -2440,7 +2440,7 @@ escope@^3.6.0:
 
 eslint-config-prettier@^2.6.0:
   version "2.6.0"
-  resolved "https://unpm.uberinternal.com/eslint-config-prettier/-/eslint-config-prettier-2.6.0.tgz#f21db0ebb438ad678fb98946097c4bb198befccc"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-2.6.0.tgz#f21db0ebb438ad678fb98946097c4bb198befccc"
   dependencies:
     get-stdin "^5.0.1"
 
@@ -2745,7 +2745,7 @@ faye-websocket@~0.11.0:
 
 fbjs@^0.8.5:
   version "0.8.16"
-  resolved "https://unpm.uberinternal.com/fbjs/-/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
+  resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
   dependencies:
     core-js "^1.0.0"
     isomorphic-fetch "^2.1.1"
@@ -3014,7 +3014,7 @@ get-stdin@^4.0.1:
 
 get-stdin@^5.0.1:
   version "5.0.1"
-  resolved "https://unpm.uberinternal.com/get-stdin/-/get-stdin-5.0.1.tgz#122e161591e21ff4c52530305693f20e6393a398"
+  resolved "https://registry.yarnpkg.com/get-stdin/-/get-stdin-5.0.1.tgz#122e161591e21ff4c52530305693f20e6393a398"
 
 get-stream@^2.2.0:
   version "2.3.1"
@@ -3067,7 +3067,7 @@ glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.0.6, glob@^7.1.1, glob@^7.1.2, gl
 
 global@^4.3.0, global@^4.3.2:
   version "4.3.2"
-  resolved "https://unpm.uberinternal.com/global/-/global-4.3.2.tgz#e76989268a6c74c38908b1305b10fc0e394e9d0f"
+  resolved "https://registry.yarnpkg.com/global/-/global-4.3.2.tgz#e76989268a6c74c38908b1305b10fc0e394e9d0f"
   dependencies:
     min-document "^2.19.0"
     process "~0.5.1"
@@ -3588,7 +3588,7 @@ is-fullwidth-code-point@^2.0.0:
 
 is-function@^1.0.1:
   version "1.0.1"
-  resolved "https://unpm.uberinternal.com/is-function/-/is-function-1.0.1.tgz#12cfb98b65b57dd3d193a3121f5f6e2f437602b5"
+  resolved "https://registry.yarnpkg.com/is-function/-/is-function-1.0.1.tgz#12cfb98b65b57dd3d193a3121f5f6e2f437602b5"
 
 is-generator-fn@^1.0.0:
   version "1.0.0"
@@ -5097,7 +5097,7 @@ preserve@^0.2.0:
 
 prettier@^1.7.4:
   version "1.7.4"
-  resolved "https://unpm.uberinternal.com/prettier/-/prettier-1.7.4.tgz#5e8624ae9363c80f95ec644584ecdf55d74f93fa"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.7.4.tgz#5e8624ae9363c80f95ec644584ecdf55d74f93fa"
 
 pretty-error@^2.0.2:
   version "2.1.1"
@@ -5309,7 +5309,7 @@ react-icons@^2.2.5:
 
 react-json-tree-zavatta@^0.1.4:
   version "0.1.4"
-  resolved "https://unpm.uberinternal.com/react-json-tree-zavatta/-/react-json-tree-zavatta-0.1.4.tgz#c713513c6b3aab240f59d4b9414443a69a9aa6a6"
+  resolved "https://registry.yarnpkg.com/react-json-tree-zavatta/-/react-json-tree-zavatta-0.1.4.tgz#c713513c6b3aab240f59d4b9414443a69a9aa6a6"
   dependencies:
     babel-runtime "^6.6.1"
     prop-types "^15.5.10"
@@ -5466,7 +5466,7 @@ redux-actions@^2.0.3:
 
 redux-thunk@^2.2.0:
   version "2.2.0"
-  resolved "https://unpm.uberinternal.com/redux-thunk/-/redux-thunk-2.2.0.tgz#e615a16e16b47a19a515766133d1e3e99b7852e5"
+  resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.2.0.tgz#e615a16e16b47a19a515766133d1e3e99b7852e5"
 
 redux@^3.7.1:
   version "3.7.1"
@@ -6164,7 +6164,7 @@ strip-json-comments@~2.0.1:
 
 styled-components@^2.2.4:
   version "2.2.4"
-  resolved "https://unpm.uberinternal.com/styled-components/-/styled-components-2.2.4.tgz#dd87fd3dafd359e7a0d570aec1bd07d691c0b5a2"
+  resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-2.2.4.tgz#dd87fd3dafd359e7a0d570aec1bd07d691c0b5a2"
   dependencies:
     buffer "^5.0.3"
     css-to-react-native "^2.0.3"
@@ -6178,7 +6178,7 @@ styled-components@^2.2.4:
 
 stylis@^3.4.0:
   version "3.4.5"
-  resolved "https://unpm.uberinternal.com/stylis/-/stylis-3.4.5.tgz#d7b9595fc18e7b9c8775eca8270a9a1d3e59806e"
+  resolved "https://registry.yarnpkg.com/stylis/-/stylis-3.4.5.tgz#d7b9595fc18e7b9c8775eca8270a9a1d3e59806e"
 
 supercluster@^2.0.1:
   version "2.3.0"
