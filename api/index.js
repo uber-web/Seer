@@ -18,7 +18,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-const isBrowser = window && window.addEventListener
+const isBrowser = typeof window !== 'undefined' && window.addEventListener
 
 const timers = new Map()
 
@@ -27,7 +27,7 @@ const timers = new Map()
  *
  * @returns {Boolean}
  */
-const isReady = () => window && window.__SEER_INITIALIZED__
+const isReady = () => isBrowser && window.__SEER_INITIALIZED__
 
 /**
  * Utility method allowing to throttle a user action based on a key and a minimun delay.
@@ -113,6 +113,7 @@ const clean = () => {
  * @param cb {Function} A callback that will receive the message payload
  */
 const listenFor = (type, cb) => {
+  if (!isBrowser) { return }
   if (!type || !cb) { throw new Error('Please provide a type and callback') }
   if (!listeners.has(type)) { listeners.set(type, []) }
   if (!window.__SEER_LISTENER__) { init() }
