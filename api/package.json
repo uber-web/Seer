@@ -1,8 +1,12 @@
 {
   "name": "seer",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A customizable devtool solution",
   "main": "dist",
+  "files": [
+    "index.js",
+    "dist"
+  ],
   "scripts": {
     "build": "rm -rf dist && mkdir dist && babel index.js -o dist/index.js",
     "docs": "cat header.md > README.md && jsdoc2md index.js >> README.md && sed -i '' '30,1000s/##/###/g' README.md"
