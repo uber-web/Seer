@@ -16,7 +16,7 @@
     "classnames": "^2.2.5",
     "global": "^4.3.2",
     "hint.css": "^2.5.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "object-path-immutable": "^0.5.1",
     "prettier": "^1.7.4",
     "prop-types": "^15.5.10",
