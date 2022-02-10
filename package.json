@@ -58,7 +58,7 @@
     "jsdom": "^11.0.0",
     "jsdom-global": "^3.0.2",
     "luma.gl": "^4.0.0-alpha.5",
-    "node-sass": "^4.5.3",
+    "node-sass": "^7.0.0",
     "nyc": "^11.0.3",
     "react-addons-test-utils": "^15.6.0",
     "react-map-gl": "beta",
