@@ -55,7 +55,7 @@
     "eslint-plugin-react": "^7.1.0",
     "extract-text-webpack-plugin": "^2.1.2",
     "html-webpack-plugin": "^2.29.0",
-    "jsdom": "^11.0.0",
+    "jsdom": "^16.5.0",
     "jsdom-global": "^3.0.2",
     "luma.gl": "^4.0.0-alpha.5",
     "node-sass": "^4.5.3",
